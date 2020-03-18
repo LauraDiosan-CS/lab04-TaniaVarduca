@@ -12,8 +12,9 @@ void testConstructors() {
 	char *a = new char[5];
 	GymExercise g2(a, 5, 10, 80); //constr with param
 	assert( (g2.getNoOfSeries() == 5) && (g2.getNoOfReps() == 10) && (g2.getWeightKg() == 80));
-	GymExercise g3(a, 10, 3, 5); //conversion constr
-	assert( (g3.getNoOfSeries() == 10) && (g3.getNoOfReps() == 3) && (g3.getWeightKg() == 5));
+	GymExercise g3(g2); //conversion constr
+	assert(g3 == g2);
+
 }
 void testSetGet() {
 	GymExercise g;
@@ -44,6 +45,6 @@ void testRepo() {
 	assert(r.getSize() == 1);
 	assert((g.getNoOfSeries() == 10) && (g.getNoOfReps() == 20) && (g.getWeightKg() == 30));
 	r.updateGymExercise(g, a, 20, 50, 100);
-	//assert((g.getNoOfSeries() == 20) && (g.getNoOfReps() == 50) && (g.getWeightKg() == 100));
+	assert((r.getItemFromPos(0).getNoOfSeries() == 20) && (r.getItemFromPos(0).getNoOfReps() == 50) && (r.getItemFromPos(0).getWeightKg() == 100));
 	cout << "all tests are ok ... good job!" << endl << endl;
 }
