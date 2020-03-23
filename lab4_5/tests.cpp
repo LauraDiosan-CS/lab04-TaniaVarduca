@@ -65,6 +65,8 @@ void testService()
 	GymExercise g1(a, 11, 51, 34); 
 	s.addGymExercise(g1); 
 	assert(s.getSize() == 2);
+	GymExercise* res; res = s.getAll(); //getAll
+	assert(res[0] == g && res[1] == g1);
 	s.delGymExercise(g1); //stergere
 	assert(s.getSize() == 1);
 	assert((strstr(g.getName(), "a")) && (g.getNoOfSeries() == 10) && (g.getNoOfReps() == 20) && (g.getWeightKg() == 30));
