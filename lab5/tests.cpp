@@ -77,12 +77,16 @@ void testService()
 	GymExercise g2(a, 1, 2, 1); 
 	s.addGymExercise(g2); 
 
+	//teste proprietati
 	GymExercise result[10]; int lenResult = 0;
 	s.filterGymExercises(100, s, s.getSize(), result, lenResult); //filtrare GymExercises cu noOfSeries * noOfReps * weightKg > X
 	assert(lenResult == 1);
+	assert((strstr(result[0].getName(), "b")) && (result[0].getNoOfSeries() == 20) && (result[0].getNoOfReps() == 50) && (result[0].getWeightKg() == 100));
 	int n = s.getSize();
 	s.delExercises(s, n); //stergere GymExercises cu weightKg * noOfReps < 5
 	assert(n == 1);
+	res = s.getAll();
+	assert((strstr(res[0].getName(), "b")) && (res[0].getNoOfSeries() == 20) && (res[0].getNoOfReps() == 50) && (res[0].getWeightKg() == 100));
 }
 
 //apelare teste si mesaje de succes

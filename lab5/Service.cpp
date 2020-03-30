@@ -1,5 +1,6 @@
 #include "Service.h"
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 //constructor fara param
@@ -69,5 +70,6 @@ void Service::delExercises(Service& s, int& n) {
 			i++;
 	}
 }
+
 
 
